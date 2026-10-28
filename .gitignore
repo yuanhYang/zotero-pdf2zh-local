@@ -11,6 +11,13 @@ yarn.lock
 .vscode
 .idea
 
+# Docker 部署文件不纳入当前项目
+/docker/
+/docker2/
+/docker.zip
+/2.4.3 version/Dockerfile
+/2.4.3 version/docker-compose.yaml
+
 server/config/config.json
 server/config/config.toml
 server/config/venv.json

@@ -11,7 +11,7 @@
 
 skill 使用 `pdf2zh_next --clitranslator` 接收模型预先写好的译文，无须另配翻译 API Key。Codex 或其他模型本身是否收费取决于所使用的服务；首次安装或运行时也可能需要联网下载依赖和模型资源。
 
-上游插件的完整说明见 [README.upstream.md](README.upstream.md)。
+上游插件的完整说明见 [README.upstream.md](README.upstream.md)。本改版使用本机环境，不包含 Docker 部署文件；上游说明中涉及 Docker 的章节仅供参考。
 
 ## 一、准备环境
 
