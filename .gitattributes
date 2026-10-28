@@ -1,0 +1,3 @@
+# 只锁定这两个批处理脚本为 CRLF
+/server/install-with-conda.bat text eol=crlf
+/server/install-with-uv.bat    text eol=crlf

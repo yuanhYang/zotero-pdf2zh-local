@@ -29,7 +29,7 @@ uv venv "$EngineEnv" --python 3.12
 uv pip install --python "$EngineEnv\Scripts\python.exe" 'pdf2zh_next>=2.9.0,<3.0.0' 'bitstring<5' PyMuPDF pypdf
 ```
 
-这个环境与运行 Server 的 `server\venv` 是两个不同环境。通过项目 Server 管理环境时，也可以使用其创建的翻译引擎环境；具体配置见 [server/config/venv.json](server/config/venv.json)。
+这个环境与运行 Server 的 `server\venv` 是两个不同环境。通过项目 Server 管理环境时，也可以使用其创建的翻译引擎环境；默认配置示例见 [server/config/venv.json.example](server/config/venv.json.example)。
 
 ### 将 skill 安装到 Codex
 

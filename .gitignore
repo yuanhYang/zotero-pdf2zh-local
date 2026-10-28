@@ -1,0 +1,62 @@
+build
+logs
+node_modules
+pnpm-lock.yaml
+yarn.lock
+.DS_Store
+.env
+.env.*
+!.env.example
+.scaffold
+.vscode
+.idea
+
+server/config/config.json
+server/config/config.toml
+server/config/venv.json
+server/config/package_update_state.json
+server/config/*.invalid.bak
+server/config/*.invalid.*.bak
+
+server/zotero-pdf2zh-next-venv
+server/zotero-pdf2zh-venv
+server/zotero-pdf2zh-next-venv.staging
+server/zotero-pdf2zh-venv.staging
+server/zotero-pdf2zh-next-venv.backup
+server/zotero-pdf2zh-venv.backup
+
+# 一键启动脚本创建的项目内虚拟环境（约 150 MB）
+server/venv
+server/.venv
+venv/
+.venv/
+
+# uv 的下载缓存与解释器（约 223 MB，可再生）
+.uv-cache/
+.uv-python/
+
+translated/*
+server/translated/*
+__pycache__
+ast.json
+
+# 本地论文、译文及翻译运行产物
+server/manual-translate/
+.dsh/skills/pdf-paper-translate/memory.jsonl
+
+# DSH 代理技能与本地工具缓存（可再生，约 220 MB）
+.uv-cache/
+.uv-python/
+.dsh/runs/
+.dsh/**/__pycache__/
+
+# 权限修复报告（一次性诊断产物）
+dsh-acl-reports/
+
+# 本地的仓库配置指南（不属于项目内容）
+GITHUB_SETUP.md
+
+LOG.md
+_debug_progress.log
+
+server/dev/

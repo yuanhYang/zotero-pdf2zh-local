@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 上游项目（插件本体与翻译管线问题）
+    url: https://github.com/guaguastandup/zotero-pdf2zh/issues
+    about: 本仓库是上游 v4.1.7 的本地改版。插件本体、Server 核心逻辑、翻译管线的问题属于上游，请到上游 issue 区反馈。
+  - name: 上游完整文档
+    url: https://github.com/guaguastandup/zotero-pdf2zh
+    about: 插件安装、Zotero 端配置、翻译服务选择、常见问题等原始文档。本仓库也保留了 README.upstream.md。

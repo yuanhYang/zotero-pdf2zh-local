@@ -1,0 +1,742 @@
+<linkset>
+    <html:link rel="localization" href="__addonRef__-preferences.ftl" />
+</linkset>
+
+<html:style>
+    .virtualized-table-container { height: 300px; max-height: 300px; }
+    #zotero-prefpane-__addonRef__-llmapi-table-container { height: 100%; width:
+    100%; } .action-button { min-width:auto; height:24px;
+    -moz-context-properties: fill, fill-opacity; fill: currentColor; }
+    .action-button .button-text { display: none; }
+</html:style>
+
+<groupbox
+    onload="Zotero.__addonInstance__.hooks.onPrefsEvent('load', { window });"
+>
+    <vbox>
+        <html:h3 data-l10n-id="pref-config-basic" />
+        <!-- 设置服务器的IP地址 -->
+        <hbox align="center" flex="1">
+            <html:label
+                for="zotero-prefpane-__addonRef__-new_serverip"
+                data-l10n-id="pref-serverip"
+            />
+            <html:input
+                id="zotero-prefpane-__addonRef__-new_serverip"
+                preference="extensions.zotero.__addonRef__.new_serverip"
+                type="text"
+                style="width: 200px"
+            />
+            <html:button
+                id="zotero-prefpane-__addonRef__-checkConnection"
+                data-l10n-id="pref-check-connection"
+                style="margin-left: 10px"
+            >
+                检查连接
+            </html:button>
+        </hbox>
+        <!-- 设置翻译的目标语言和源语言 -->
+        <hbox align="center" flex="1">
+            <html:label
+                for="zotero-prefpane-__addonRef__-pref-sourceLang"
+                data-l10n-id="pref-sourceLang"
+            />
+            <html:input
+                id="zotero-prefpane-__addonRef__-sourceLang"
+                preference="extensions.zotero.__addonRef__.sourceLang"
+                type="text"
+                style="width: 120px; text-align: center"
+            />
+            <html:select
+                id="zotero-prefpane-__addonRef__-sourceLangSelect"
+                preference="extensions.zotero.__addonRef__.sourceLang"
+                style="width: 150px; text-align: center"
+            >
+            </html:select>
+        </hbox>
+        <hbox align="center" flex="1">
+            <html:label
+                for="zotero-prefpane-__addonRef__-targetLang"
+                data-l10n-id="pref-targetLang"
+            />
+            <html:input
+                id="zotero-prefpane-__addonRef__-targetLang"
+                preference="extensions.zotero.__addonRef__.targetLang"
+                type="text"
+                style="width: 120px; text-align: center"
+            />
+            <html:select
+                id="zotero-prefpane-__addonRef__-targetLangSelect"
+                preference="extensions.zotero.__addonRef__.targetLang"
+                style="width: 150px; text-align: center"
+            >
+            </html:select>
+        </hbox>
+        <!-- 设置翻译引擎 -->
+        <hbox align="center" flex="1">
+            <hbox align="center" flex="1">
+                <html:label
+                    for="zotero-prefpane-__addonRef__-engine"
+                    data-l10n-id="pref-engine"
+                />
+                <html:input
+                    id="zotero-prefpane-__addonRef__-engine"
+                    preference="extensions.zotero.__addonRef__.engine"
+                    type="text"
+                    flex="1"
+                    style="width: 105px; text-align: center"
+                />
+                <html:select
+                    id="zotero-prefpane-__addonRef__-engineSelect"
+                    preference="extensions.zotero.__addonRef__.engine"
+                    style="width: 130px; text-align: center"
+                >
+                    <html:option value="pdf2zh">pdf2zh</html:option>
+                    <html:option value="pdf2zh_next">pdf2zh_next</html:option>
+                </html:select>
+            </hbox>
+        </hbox>
+        <!-- 设置翻译服务 -->
+        <hbox
+            class="pdf1x-config"
+            style="display: none"
+            align="center"
+            flex="1"
+        >
+            <hbox align="center" flex="1">
+                <html:label
+                    for="zotero-prefpane-__addonRef__-service"
+                    data-l10n-id="pref-service"
+                />
+                <html:input
+                    id="zotero-prefpane-__addonRef__-service"
+                    preference="extensions.zotero.__addonRef__.service"
+                    type="text"
+                    flex="1"
+                    style="width: 105px; text-align: center"
+                />
+                <html:select
+                    id="zotero-prefpane-__addonRef__-serviceSelect"
+                    preference="extensions.zotero.__addonRef__.service"
+                    style="width: 130px; text-align: center"
+                >
+                    <html:option value="bing">Bing</html:option>
+                    <html:option value="google">Google</html:option>
+
+                    <html:option value="openailiked">OpenAILiked</html:option>
+                    <html:option value="deepseek">DeepSeek</html:option>
+                    <html:option value="openai">OpenAI</html:option>
+                    <html:option value="gemini">Gemini</html:option>
+                    <html:option value="silicon">SiliconFlow</html:option>
+                    <html:option value="zhipu">Zhipu</html:option>
+                    <html:option value="modelscope">ModelScope</html:option>
+                    <html:option value="qwen-mt">Qwen-MT</html:option>
+
+                    <html:option value="deepl">DeepL</html:option>
+                    <html:option value="tencent">Tencent</html:option>
+                    <html:option value="grok">Grok</html:option>
+
+                    <html:option value="dify">Dify</html:option>
+                    <html:option value="argos">Argos</html:option>
+                    <html:option value="ollama">Ollama</html:option>
+                    <html:option value="xinference">XInference</html:option>
+                    <html:option value="anythingllm">AnythingLLM</html:option>
+
+                    <html:option value="azure-openai">Azure OpenAI</html:option>
+                    <html:option value="azure">Azure</html:option>
+
+                    <html:option value="groq">Groq</html:option>
+                </html:select>
+            </hbox>
+        </hbox>
+
+        <hbox
+            class="pdf2x-config"
+            style="display: none"
+            align="center"
+            flex="1"
+        >
+            <hbox align="center" flex="1">
+                <html:label
+                    for="zotero-prefpane-__addonRef__-next_service"
+                    data-l10n-id="pref-service"
+                />
+                <html:input
+                    id="zotero-prefpane-__addonRef__-next_service"
+                    preference="extensions.zotero.__addonRef__.next_service"
+                    type="text"
+                    flex="1"
+                    style="width: 105px; text-align: center"
+                />
+                <html:select
+                    id="zotero-prefpane-__addonRef__-next_serviceSelect"
+                    preference="extensions.zotero.__addonRef__.next_service"
+                    style="width: 130px; text-align: center"
+                >
+                    <html:option value="siliconflowfree"
+                        >SiliconFlow Free</html:option
+                    >
+                    <html:option value="bing">Bing</html:option>
+                    <html:option value="google">Google</html:option>
+
+                    <html:option value="openailiked">OpenAILiked</html:option>
+                    <html:option value="AliyunDashScope"
+                        >AliyunDashScope</html:option
+                    >
+                    <html:option value="deepseek">DeepSeek</html:option>
+                    <html:option value="openai">OpenAI</html:option>
+                    <html:option value="gemini">Gemini</html:option>
+                    <html:option value="silicon">SiliconFlow</html:option>
+                    <html:option value="zhipu">Zhipu</html:option>
+                    <html:option value="modelscope">ModelScope</html:option>
+                    <html:option value="qwen-mt">Qwen-MT</html:option>
+
+                    <html:option value="deepl">DeepL</html:option>
+                    <html:option value="tencent">Tencent</html:option>
+                    <html:option value="grok">Grok</html:option>
+
+                    <html:option value="dify">Dify</html:option>
+                    <html:option value="argos">Argos</html:option>
+                    <html:option value="ollama">Ollama</html:option>
+                    <html:option value="xinference">XInference</html:option>
+                    <html:option value="anythingllm">AnythingLLM</html:option>
+
+                    <html:option value="azure-openai">Azure OpenAI</html:option>
+                    <html:option value="azure">Azure</html:option>
+
+                    <html:option value="groq">Groq</html:option>
+                    <html:option value="claudecode">claudecode</html:option>
+                </html:select>
+            </hbox>
+        </hbox>
+
+        <!-- 设置翻译线程数、跳过最后几页、重命名 -->
+        <vbox align="left" flex="1">
+            <hbox align="left" flex="1">
+                <hbox align="center" class="pdf1x-config" style="display: none">
+                    <html:label
+                        for="zotero-prefpane-__addonRef__-threadNum"
+                        data-l10n-id="pref-threadNum"
+                    />
+                    <html:input
+                        id="zotero-prefpane-__addonRef__-threadNum"
+                        preference="extensions.zotero.__addonRef__.threadNum"
+                        type="number"
+                        style="width: 50px; text-align: center"
+                    />
+                </hbox>
+                <hbox class="pdf2x-config" style="display: none">
+                    <hbox align="center">
+                        <html:label
+                            for="zotero-prefpane-__addonRef__-qps"
+                            data-l10n-id="pref-qps"
+                        />
+                        <html:input
+                            id="zotero-prefpane-__addonRef__-qps"
+                            preference="extensions.zotero.__addonRef__.qps"
+                            type="number"
+                            style="width: 50px; text-align: center"
+                        />
+                    </hbox>
+                    <hbox align="center">
+                        <html:label
+                            for="zotero-prefpane-__addonRef__-poolSize"
+                            data-l10n-id="pref-poolSize"
+                        />
+                        <html:input
+                            id="zotero-prefpane-__addonRef__-poolSize"
+                            preference="extensions.zotero.__addonRef__.poolSize"
+                            type="number"
+                            style="width: 50px; text-align: center"
+                        />
+                    </hbox>
+                </hbox>
+            </hbox>
+            <hbox align="center" flex="1">
+                <html:label
+                    for="zotero-prefpane-__addonRef__-skipLastPages"
+                    data-l10n-id="pref-skipLastPages"
+                />
+                <html:input
+                    id="zotero-prefpane-__addonRef__-skipLastPages"
+                    preference="extensions.zotero.__addonRef__.skipLastPages"
+                    type="number"
+                    style="width: 50px; text-align: center"
+                />
+            </hbox>
+            <hbox align="center" flex="1">
+                <checkbox
+                    id="zotero-prefpane-__addonRef__-rename"
+                    preference="extensions.zotero.__addonRef__.rename"
+                />
+                <html:label
+                    for="zotero-prefpane-__addonRef__-rename"
+                    data-l10n-id="pref-rename"
+                />
+            </hbox>
+            <hbox align="center" flex="1">
+                <checkbox
+                    id="zotero-prefpane-__addonRef__-showProgress"
+                    preference="extensions.zotero.__addonRef__.showProgress"
+                />
+                <html:label
+                    for="zotero-prefpane-__addonRef__-showProgress"
+                    data-l10n-id="pref-showProgress"
+                />
+            </hbox>
+            <hbox align="center" flex="1">
+                <checkbox
+                    id="zotero-prefpane-__addonRef__-transFirst"
+                    preference="extensions.zotero.__addonRef__.transFirst"
+                />
+                <html:label
+                    data-l10n-id="pref-transFirst"
+                    for="zotero-prefpane-__addonRef__-transFirst"
+                />
+            </hbox>
+        </vbox>
+    </vbox>
+
+    <!-- pdf2zh 1.x专用配置 -->
+    <hbox class="pdf1x-config" style="display: none" align="center" flex="1">
+        <html:h4 data-l10n-id="pref-pdf1x-config-title"></html:h4>
+        <hbox align="center" flex="1">
+            <checkbox
+                id="zotero-prefpane-__addonRef__-skipSubsetFonts"
+                preference="extensions.zotero.__addonRef__.skipSubsetFonts"
+            />
+            <html:label
+                data-l10n-id="pref-skipSubsetFonts"
+                for="zotero-prefpane-__addonRef__-skipSubsetFonts"
+            />
+        </hbox>
+        <hbox align="center" flex="1">
+            <checkbox
+                id="zotero-prefpane-__addonRef__-babeldoc"
+                preference="extensions.zotero.__addonRef__.babeldoc"
+            />
+            <html:label
+                data-l10n-id="pref-babeldoc"
+                for="zotero-prefpane-__addonRef__-babeldoc"
+            />
+        </hbox>
+        <hbox align="center" flex="1">
+            <html:label
+                data-l10n-id="pref-fontFile"
+                for="zotero-prefpane-__addonRef__-fontFile"
+            />
+            <html:input
+                type="file"
+                id="zotero-prefpane-__addonRef__-fontFile"
+                preference="extensions.zotero.__addonRef__.fontFile"
+                accept=".ttf,.otf,.woff,.woff2"
+            />
+            <button
+                id="zotero-prefpane-__addonRef__-fontFile-clear"
+                label="Clear"
+                data-l10n-id="pref-clear"
+            />
+        </hbox>
+    </hbox>
+
+    <!-- pdf2zh 2.x专用配置 -->
+    <hbox class="pdf2x-config" style="display: none" align="center" flex="1">
+        <html:h4 data-l10n-id="pref-pdf2x-config-title"></html:h4>
+        <hbox align="center" flex="1">
+            <html:label
+                data-l10n-id="pref-fontFamily"
+                for="zotero-prefpane-__addonRef__-fontFamily"
+            />
+            <html:select
+                id="zotero-prefpane-__addonRef__-fontFamily"
+                preference="extensions.zotero.__addonRef__.fontFamily"
+            >
+                <html:option value="auto">auto</html:option>
+                <html:option value="serif">serif</html:option>
+                <html:option value="sans-serif">sans-serif</html:option>
+                <html:option value="script">script</html:option>
+            </html:select>
+        </hbox>
+        <hbox align="center" flex="1">
+            <html:label
+                data-l10n-id="pref-dualMode"
+                for="zotero-prefpane-__addonRef__-dualMode"
+            />
+            <html:select
+                id="zotero-prefpane-__addonRef__-dualMode"
+                preference="extensions.zotero.__addonRef__.dualMode"
+            >
+                <html:option
+                    value="LR"
+                    data-l10n-id="pref-dualMode-lr"
+                ></html:option>
+                <html:option
+                    value="TB"
+                    data-l10n-id="pref-dualMode-tb"
+                ></html:option>
+            </html:select>
+        </hbox>
+        <hbox align="center" flex="1">
+            <hbox align="center" flex="1">
+                <checkbox
+                    id="zotero-prefpane-__addonRef__-ocr"
+                    preference="extensions.zotero.__addonRef__.ocr"
+                />
+                <html:label
+                    data-l10n-id="pref-ocr"
+                    for="zotero-prefpane-__addonRef__-ocr"
+                />
+            </hbox>
+            <hbox align="center" flex="1">
+                <checkbox
+                    id="zotero-prefpane-__addonRef__-autoOcr"
+                    preference="extensions.zotero.__addonRef__.autoOcr"
+                />
+                <html:label
+                    data-l10n-id="pref-autoOcr"
+                    for="zotero-prefpane-__addonRef__-autoOcr"
+                />
+            </hbox>
+        </hbox>
+
+        <hbox align="center" flex="1">
+            <checkbox
+                id="zotero-prefpane-__addonRef__-noWatermark"
+                preference="extensions.zotero.__addonRef__.noWatermark"
+            />
+            <html:label
+                data-l10n-id="pref-noWatermark"
+                for="zotero-prefpane-__addonRef__-noWatermark"
+            />
+        </hbox>
+        <hbox align="left" flex="1">
+            <hbox align="center" flex="1">
+                <checkbox
+                    id="zotero-prefpane-__addonRef__-saveGlossary"
+                    preference="extensions.zotero.__addonRef__.saveGlossary"
+                />
+                <html:label
+                    data-l10n-id="pref-saveGlossary"
+                    for="zotero-prefpane-__addonRef__-saveGlossary"
+                />
+            </hbox>
+            <hbox align="center" flex="1">
+                <checkbox
+                    id="zotero-prefpane-__addonRef__-disableGlossary"
+                    preference="extensions.zotero.__addonRef__.disableGlossary"
+                />
+                <html:label
+                    data-l10n-id="pref-disableGlossary"
+                    for="zotero-prefpane-__addonRef__-disableGlossary"
+                />
+            </hbox>
+        </hbox>
+        <hbox align="left" flex="1">
+            <hbox align="center" flex="1">
+                <checkbox
+                    id="zotero-prefpane-__addonRef__-noDual"
+                    preference="extensions.zotero.__addonRef__.noDual"
+                />
+                <html:label
+                    data-l10n-id="pref-noDual"
+                    for="zotero-prefpane-__addonRef__-noDual"
+                />
+            </hbox>
+            <hbox align="center" flex="1">
+                <checkbox
+                    id="zotero-prefpane-__addonRef__-noMono"
+                    preference="extensions.zotero.__addonRef__.noMono"
+                />
+                <html:label
+                    data-l10n-id="pref-noMono"
+                    for="zotero-prefpane-__addonRef__-noMono"
+                />
+            </hbox>
+        </hbox>
+        <hbox align="center" flex="1">
+            <hbox align="center" flex="1">
+                <checkbox
+                    id="zotero-prefpane-__addonRef__-skipClean"
+                    preference="extensions.zotero.__addonRef__.skipClean"
+                />
+                <html:label
+                    data-l10n-id="pref-skipClean"
+                    for="zotero-prefpane-__addonRef__-skipClean"
+                />
+            </hbox>
+            <hbox align="center" flex="1">
+                <checkbox
+                    id="zotero-prefpane-__addonRef__-enhanceCompatibility"
+                    preference="extensions.zotero.__addonRef__.enhanceCompatibility"
+                />
+                <html:label
+                    data-l10n-id="pref-enhanceCompatibility"
+                    for="zotero-prefpane-__addonRef__-enhanceCompatibility"
+                />
+            </hbox>
+        </hbox>
+        <hbox align="center" flex="1">
+            <hbox align="center" flex="1">
+                <checkbox
+                    id="zotero-prefpane-__addonRef__-disableRichTextTranslate"
+                    preference="extensions.zotero.__addonRef__.disableRichTextTranslate"
+                />
+                <html:label
+                    data-l10n-id="pref-disableRichTextTranslate"
+                    for="zotero-prefpane-__addonRef__-disableRichTextTranslate"
+                />
+            </hbox>
+            <hbox align="center" flex="1">
+                <checkbox
+                    id="zotero-prefpane-__addonRef__-translateTableText"
+                    preference="extensions.zotero.__addonRef__.translateTableText"
+                />
+                <html:label
+                    data-l10n-id="pref-translateTableText"
+                    for="zotero-prefpane-__addonRef__-translateTableText"
+                />
+            </hbox>
+        </hbox>
+        <hbox align="center" flex="1">
+            <checkbox
+                id="zotero-prefpane-__addonRef__-onlyIncludeTranslatedPage"
+                preference="extensions.zotero.__addonRef__.onlyIncludeTranslatedPage"
+            />
+            <html:label
+                data-l10n-id="pref-onlyIncludeTranslatedPage"
+                for="zotero-prefpane-__addonRef__-onlyIncludeTranslatedPage"
+            />
+        </hbox>
+    </hbox>
+
+    <!--pdf2zh默认生成和打开的文件-->
+    <vbox flex="1">
+        <html:h3 data-l10n-id="pref-gen"></html:h3>
+        <hbox align="center" flex="1">
+            <hbox align="center" flex="1">
+                <checkbox
+                    id="zotero-prefpane-__addonRef__-mono"
+                    preference="extensions.zotero.__addonRef__.mono"
+                />
+                <html:label
+                    data-l10n-id="pref-mono"
+                    for="zotero-prefpane-__addonRef__-mono"
+                />
+            </hbox>
+            <hbox align="center" flex="1">
+                <checkbox
+                    id="zotero-prefpane-__addonRef__-mono-open"
+                    preference="extensions.zotero.__addonRef__.mono-open"
+                />
+                <html:label
+                    data-l10n-id="pref-open"
+                    for="zotero-prefpane-__addonRef__-mono-open"
+                />
+            </hbox>
+        </hbox>
+        <hbox align="center" flex="1">
+            <hbox align="center" flex="1">
+                <checkbox
+                    id="zotero-prefpane-__addonRef__-dual"
+                    preference="extensions.zotero.__addonRef__.dual"
+                />
+                <html:label
+                    data-l10n-id="pref-dual"
+                    for="zotero-prefpane-__addonRef__-dual"
+                />
+            </hbox>
+            <hbox align="center" flex="1">
+                <checkbox
+                    id="zotero-prefpane-__addonRef__-dual-open"
+                    preference="extensions.zotero.__addonRef__.dual-open"
+                />
+                <html:label
+                    data-l10n-id="pref-open"
+                    for="zotero-prefpane-__addonRef__-dual-open"
+                />
+            </hbox>
+        </hbox>
+        <hbox>
+            <hbox align="center" flex="1">
+                <checkbox
+                    id="zotero-prefpane-__addonRef__-mono-cut"
+                    preference="extensions.zotero.__addonRef__.mono-cut"
+                />
+                <html:label
+                    data-l10n-id="pref-mono-cut"
+                    for="zotero-prefpane-__addonRef__-mono-cut"
+                />
+            </hbox>
+            <hbox align="center" flex="1">
+                <checkbox
+                    id="zotero-prefpane-__addonRef__-mono-cut-open"
+                    preference="extensions.zotero.__addonRef__.mono-cut-open"
+                />
+                <html:label
+                    data-l10n-id="pref-open"
+                    for="zotero-prefpane-__addonRef__-mono-cut-open"
+                />
+            </hbox>
+        </hbox>
+        <hbox>
+            <hbox align="center" flex="1">
+                <checkbox
+                    id="zotero-prefpane-__addonRef__-dual-cut"
+                    preference="extensions.zotero.__addonRef__.dual-cut"
+                />
+                <html:label
+                    data-l10n-id="pref-dual-cut"
+                    for="zotero-prefpane-__addonRef__-dual-cut"
+                />
+            </hbox>
+            <hbox align="center" flex="1">
+                <checkbox
+                    id="zotero-prefpane-__addonRef__-dual-cut-open"
+                    preference="extensions.zotero.__addonRef__.dual-cut-open"
+                />
+                <html:label
+                    data-l10n-id="pref-open"
+                    for="zotero-prefpane-__addonRef__-dual-cut-open"
+                />
+            </hbox>
+        </hbox>
+        <hbox align="center" flex="1">
+            <hbox align="center" flex="1">
+                <checkbox
+                    id="zotero-prefpane-__addonRef__-crop-compare"
+                    preference="extensions.zotero.__addonRef__.crop-compare"
+                />
+                <html:label
+                    data-l10n-id="pref-crop-compare"
+                    for="zotero-prefpane-__addonRef__-crop-compare"
+                />
+            </hbox>
+            <hbox align="center" flex="1">
+                <checkbox
+                    id="zotero-prefpane-__addonRef__-crop-compare-open"
+                    preference="extensions.zotero.__addonRef__.crop-compare-open"
+                />
+                <html:label
+                    data-l10n-id="pref-open"
+                    for="zotero-prefpane-__addonRef__-crop-compare-open"
+                />
+            </hbox>
+        </hbox>
+        <hbox align="center" flex="1">
+            <hbox align="center" flex="1">
+                <checkbox
+                    id="zotero-prefpane-__addonRef__-compare"
+                    preference="extensions.zotero.__addonRef__.compare"
+                />
+                <html:label
+                    data-l10n-id="pref-compare"
+                    for="zotero-prefpane-__addonRef__-compare"
+                />
+            </hbox>
+            <hbox align="center" flex="1">
+                <checkbox
+                    id="zotero-prefpane-__addonRef__-compare-open"
+                    preference="extensions.zotero.__addonRef__.compare-open"
+                />
+                <html:label
+                    data-l10n-id="pref-open"
+                    for="zotero-prefpane-__addonRef__-compare-open"
+                />
+            </hbox>
+        </hbox>
+    </vbox>
+
+    <groupbox>
+        <html:h3>LLM API 配置管理</html:h3>
+        <p>
+            请在此处配置您自行申请的 LLM API 信息,
+            以便插件可以调用相应的翻译服务。
+        </p>
+        <hbox flex="1" align="center" class="virtualized-table-container">
+            <html:div
+                id="zotero-prefpane-__addonRef__-llmapi-table-container"
+            />
+        </hbox>
+        <hbox align="center" flex="1">
+            <button
+                id="zotero-prefpane-__addonRef__-llmapi-add"
+                class="action-button"
+                data-l10n-id="pref-llmapi-add"
+            />
+            <button
+                id="zotero-prefpane-__addonRef__-llmapi-remove"
+                class="action-button llmapi-selection"
+                data-l10n-id="pref-llmapi-remove"
+            />
+            <button
+                id="zotero-prefpane-__addonRef__-llmapi-edit"
+                class="action-button llmapi-selection-single"
+                data-l10n-id="pref-llmapi-edit"
+            />
+            <button
+                id="zotero-prefpane-__addonRef__-llmapi-activate"
+                class="action-button llmapi-selection-single"
+                data-l10n-id="pref-llmapi-activate"
+            />
+            <button
+                id="zotero-prefpane-__addonRef__-llmapi-totop"
+                class="action-button llmapi-selection-single"
+                data-l10n-id="pref-llmapi-totop"
+            />
+        </hbox>
+    </groupbox>
+
+    <vbox>
+        <html:h2>注意事项</html:h2>
+        <p align="center">
+            🌷 关于本插件的所有信息, 以本插件的Github项目主页为准:
+            https://github.com/guaguastandup/zotero-pdf2zh
+        </p>
+        <p align="center">
+            🌷 如果您无法访问Github, 请访问本项目Gitee镜像主页:
+            https://gitee.com/guaguastandup/zotero-pdf2zh
+        </p>
+        <p align="center">
+            🌷 本插件需要使用命令行/终端/docker/执行Python脚本,
+            才可以使用翻译功能, 请在翻译过程中保持终端/命令行开启。
+        </p>
+        <p align="center">🌷 项目文档: https://zotero-pdf2zh.github.io/</p>
+        <p align="center">
+            🌷 [2026年8月23日v4.1.7更新日志] 远程/Docker 翻译完成后优先 HTTP
+            挂附件|新旧插件协议兼容|进度条显示翻译百分比|加固附件文件名|补齐额外字段白名单，可从下拉添加
+            `*_enable_json_mode`（默认关闭）|请同时更新插件和 Server
+        </p>
+        <p align="center">
+            🌷 [2026年8月22日v4.1.6更新日志] 翻译改为后台任务，避免 Windows
+            长连接 Network Error|进度查询不再打断终端进度条
+        </p>
+        <p align="center">
+            🌷 [2026年8月21日v4.1.3更新日志] 翻译完成后优先从本机挂附件，减少
+            Network Error 导致条目下没有
+            PDF|终端进度条按真实窗口宽度绘制，避免折行重复打印
+        </p>
+        <p align="center">
+            🌷 [2026年8月20日v4.1.1更新日志] 修复 Windows Conda 将 python.exe
+            找错路径导致环境不可用|staging 更新失败时继续使用健康旧环境|修复
+            Windows 非 UTF-8 控制台因日志 emoji 崩溃
+        </p>
+        <p align="center">
+            🌷 [2026年8月19日v4.1.0更新日志] DeepSeek V4 Thinking 控制|翻译环境
+            staging 安全安装/更新|完善 Dual/Crop 状态处理
+        </p>
+        <p align="center">
+            🌷 本插件为免费开源插件, 请勿在其他渠道购买本插件, 请及时申请退款。
+            QQ交流群请到 GitHub / Gitee
+            仓库主页查看最新群号和入群口令，进群请先查看群公告。
+            请勿使用非官方搬运版中的口令。
+        </p>
+    </vbox>
+</groupbox>
+
+<vbox>
+    <html:h2></html:h2>
+    <html:label
+        data-l10n-id="pref-help"
+        data-l10n-args='{"time": "__buildTime__","name": "__addonName__","version":"__buildVersion__"}'
+    ></html:label>
+</vbox>
